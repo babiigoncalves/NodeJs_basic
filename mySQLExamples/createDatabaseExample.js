@@ -13,6 +13,6 @@ con.connect(function(err) {
     con.query("CREATE DATABASE myDbTest", function(){
         if (err) throw err;
         console.log("Database created!");
+        console.log("Press Ctrl+ C to quit!");
     });
-    console.log("Press Ctrl+ C to quit!");
 });
