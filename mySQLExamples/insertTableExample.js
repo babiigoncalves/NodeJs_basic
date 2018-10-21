@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var conn = mysql.createConnection({
   host: "localhost",
   user: "yourUsername",
-  password: "yourPassword",
+  password: "youPassword",
   database: "mydbTest"
 });
 
@@ -22,4 +22,11 @@ conn.connect(function(err){
         if (err) throw err;
         console.log(result.affectedRows + " rows inserted!")
     });
+
+    conn.query("SELECT * FROM customers", function (err, result, fields) {
+        if (err) throw err;
+        console.log(result);
+        console.log("Press Ctrl + C to quit");
+        
+      });
 });
